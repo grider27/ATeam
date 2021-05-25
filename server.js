@@ -10,7 +10,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOption = {
-    origin: "http://localhost:8081"
+    origin: "*"
 };
 
 app.use(cors(corsOption));
@@ -20,7 +20,7 @@ app.use(express.json());
 
 //simple route to test server
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to bezkoder application." });
+    res.json({ message: "Welcome to A-Team application." });
   });
 //
 
