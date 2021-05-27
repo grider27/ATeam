@@ -1,38 +1,34 @@
-const express = require("express");
-
-const mongoose = require("mongoose");
-// const routes = require("./routes");
-const PORT = process.env.PORT || 3001;
-
-const cors = require("cors");
-
+const express = require('express');
+const connectDB = require('./config/db');
+const path = require('path');
+const helmet = require('helmet');
 
 const app = express();
 
-var corsOption = {
-    origin: "*"
-};
+// Connect Database
+connectDB();
 
-app.use(cors(corsOption));
+// Init Middleware
+app.use(express.json({ extended: false }));
+app.use(helmet());
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+// Define Routes
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/profile', require('./routes/api/profile'));
 
-//simple route to test server
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to A-Team application." });
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
-//
-
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
 }
 
-// app.use(routes);
+const PORT = process.env.PORT || 3001;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/booklist");
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
-  
+module.exports = app;
