@@ -1,0 +1,214 @@
+/* fonts */
+/* 
+font-family: 'Open Sans', sans-serif;
+font-family: 'PT Sans', sans-serif; 
+*/
+
+
+
+/* 
+color pallet    
+dark-ben-franklin #0f4d90
+ben-franklin-blue #2176d2
+light-ben-franklin #96c9ff
+electric-blue #25cef7
+bell-yellow #f3c613
+flyers-orange #f99300
+kelly-drive-green #58c04d
+light-bell #ffefa2
+light-red #fed0d0
+light-kelly-drive #b9f2b1
+light-blue #DAEDFE
+phanatic-green #3a833c
+love-park-red #cc3000
+pride-purple #9400c6
+*/
+
+
+
+/* .custom-shape-divider-top-1621374780 {
+    margin: -5,5,0,-5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    shape-renderer: crispEdges;
+} */
+
+/* .custom-shape-divider-top-1621374780 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 208px;
+        stroke: #ff0000;
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    fill: url(#pattern);
+} */
+
+/* .custom-shape-divider-top-1621374780 .shape-fill {
+    fill: beige;
+
+    outline: 3px solid orangered;
+    
+} */
+
+.border {
+border: red 5px;
+border-style: solid;
+border-width: 5px;
+}
+
+/** For mobile devices **/
+/* @media (max-width: 767px) {
+    .custom-shape-divider-top-1621374780 svg {
+        width: calc(100% + 1.3px);
+        height: 73px;
+    }
+} */
+
+
+body{
+    background-color: #f3c613;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  /* Similar syntax to box-shadow */
+}
+
+.custom-shape-divider-top-1621465308 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1621465308 svg {
+    position: relative;
+    display: block;
+    width: calc(196% + 1.3px);
+    height: 363px;
+}
+
+.custom-shape-divider-top-1621465308 .shape-fill {
+    fill: #9f00d9ff;
+}
+
+svg {
+    /* position: absolute;
+    left: 0;
+    top: 0; */
+    z-index: -1;
+}
+
+button {
+    margin: 2vh 2vh !important;
+    padding: 1vh !important;
+    border-radius: 100px !important;
+    border: none !important;
+}
+
+h1 {
+    font-family: sans-serif;
+    color: black;
+    padding: 2vh;
+
+}
+
+.intro {
+    float: right;
+    
+}
+
+.custom-shape-divider-bottom-1621466425 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1621466425 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 275px;
+}
+
+.custom-shape-divider-bottom-1621466425 .shape-fill {
+    fill:#9f00d9ff;
+    /* fill: url(assets/imgs/retro-bg.jpg) */
+}
+
+.container {
+    z-index: 1;
+    border-width:1px 0;
+    list-style:none;
+    /* margin:0;
+    padding:0; */
+    text-align:center;
+    position:relative;
+    height:250px; 
+}
+
+nav {
+    background-color: #9f00d9ff;
+    color: white;
+}
+.navbar-brand, .nav-link {
+    color: white;
+}
+
+.btn-success {
+    /* padding: 0 !important; */
+    margin: 0 !important;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.6fr 0.9fr 1.7fr 0.9fr 0.5fr;
+  grid-template-rows: 0.2fr 0.4fr 1.2fr 2.9fr 0.3fr;
+  gap: 0px 0px;
+}
+
+.Sticker { grid-area: 2 / 4 / 3 / 5; }
+
+.Login { grid-area: 3 / 3 / 4 / 4; }
+
+.Footer { grid-area: 5 / 1 / 6 / 6; }
+
+.Background { grid-area: 2 / 2 / 5 / 5; }
+
+.Header { grid-area: 1 / 1 / 2 / 6; }
+
+.LeftSideBar { grid-area: 2 / 1 / 5 / 2; }
+
+.RightSideBar { grid-area: 2 / 5 / 5 / 6; }
+
+.shape-outer {
+    display: flex;
+    flex-shrink: 0;
+    height: calc(75px + 2vw);
+    width: calc(75px + 2vw);
+    /* margin: 25px; */
+    background-image: linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5);
+}
+
+.shape-inner {	
+    height: calc(65px + 2vw);
+    width: calc(65px + 2vw);
+    background: greenyellow;
+    background-size: cover;
+    margin: auto;
+}
+
+.heptagon {
+    -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 62%, 75% 100%, 25% 100%, 0% 62%, 10% 20%);
+    		clip-path: polygon(50% 0%, 90% 20%, 100% 62%, 75% 100%, 25% 100%, 0% 62%, 10% 20%);
+}
