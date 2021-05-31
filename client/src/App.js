@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Rewards from './pages/Rewards';
 import PasswordReset from './pages/PasswordReset';
+import ManageStudents from './pages/ManageStudents';
 
 export default function App() {
   return (
@@ -20,6 +21,9 @@ export default function App() {
           <Route path="/rewards">
             <Rewards />
           </Route>
+          <Route path="/ManageStudents">
+            <ManageStudents />
+            </Route>
           <Route path="/signup">
             <Signup />
           </Route>
