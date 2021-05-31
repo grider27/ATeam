@@ -2,9 +2,9 @@
 
 const Rewards= ()=> {
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{backgroundColor: "#f3c613"}}>
     
-    <div className="content">
+    <div className="content" >
         <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand" href="#">Reader-Feeder</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -32,8 +32,8 @@ const Rewards= ()=> {
                     <h1 className="font-weight-bold">Hello Teacher</h1>
                 </div>
             </div>
-            <table className="table" style={{background: "white", borderRadius: "50px"}}>
-                <thead>                        
+            <table className="table" style={{background: "white", borderRadius: "50px", borderTopStyle: "none" }}>
+                <thead >                        
                     <tr>
                         
                         <th scope="col">Student Name</th>
