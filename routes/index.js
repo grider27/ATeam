@@ -10,6 +10,7 @@ router.use("/api/auth", auth);
 router.use("/api/profile", profile);
 router.use("/api/users", users);
 router.use("/api/students", students);
+router.use("/")
 
 // Send every other request to the React app
 router.use(function (req, res) {
