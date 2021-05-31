@@ -1,11 +1,12 @@
-
+import NavBar from '../components/navbar'
 
 const Rewards= ()=> {
   return (
     <div className="wrapper" style={{backgroundColor: "#f3c613"}}>
     
-    <div className="content" >
-        <nav className="navbar navbar-expand-lg">
+          <div className="content" >
+              <NavBar />
+        {/* <nav className="navbar navbar-expand-lg">
             <a className="navbar-brand" href="#">Reader-Feeder</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +25,7 @@ const Rewards= ()=> {
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav> */}
 
         <div className="container">
             <div className="row">
