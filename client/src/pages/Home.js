@@ -1,4 +1,8 @@
+// const enroll = () => (
+//     <link to="/Signup"> Enroll! </link>
+//         )
 
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return  ( 
@@ -22,100 +26,100 @@ const Home = () => {
                         borderBottomRightRadius: '50px'
                         }}>
          
-                      <div className="col-2" style={{
-                          height: '90vh',
-                          borderLeftStyle: 'solid',
-                          borderLeftWidth: '80px'
-              }}>
+                    <div className="col-2" style={{
+                        height: '90vh',
+                        borderLeftStyle: 'solid',
+                        borderLeftWidth: '80px'
+            }}>
 
-              </div>
-              <div className="col-8">
-                  <div className="row">
-                              <div className="col-12 d-flex justify-content-end" style={{
-                                  height: '10vh',
-                                  zIndex: '1'
-                              }}>
-                          <a href="signup.html">
-                              <div className="shape-outer heptagon">
-                                  <div className="shape-inner heptagon">
-                                              <h4 style=
-                                                  {{
-                                                  marginTop: '35px',
-                                                  color:'red'
-                                                  }}>ENROLL!</h4>
-                                  </div>
-                              </div>
-                          </a>
+            </div>
+            <div className="col-8">
+                <div className="row">
+                            <div className="col-12 d-flex justify-content-end" style={{
+                                height: '10vh',
+                                zIndex: '1'
+                            }}>
+                                    
+                            <div className="shape-outer heptagon">
+                                <div className="shape-inner heptagon">
+                                            <h4 style=
+                                                {{
+                                                marginTop: '35px',
+                                                color:'red'
+                                                }}><Link to={"/Signup"}>Enroll!</Link></h4>
+                                </div>
+                            </div>
+                        
 
-                      </div>
-                  </div>
-                  <div className="row">
-                      <div className="col-8 offset-2 ">
-                                  <div className="login" style={{
-                                     background: 'white',
-                                     borderRadius: '100px',
-                                     border: 'solid',
-                                     borderWidth: '5px'
-                                      
-                          }}>
-                              <div className="row">
-                                  <div className="col-12">
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-8 offset-2 ">
+                                <div className="login" style={{
+                                    background: 'white',
+                                    borderRadius: '100px',
+                                    border: 'solid',
+                                    borderWidth: '5px'
+                                    
+                        }}>
+                            <div className="row">
+                                <div className="col-12">
 
-                                      <h1 className="font-weight-bold">Reader Feeder</h1>
-                                  </div>
-                              </div>
-                              <div className="row">
-                                  <div className="col-12 d-flex justify-content-center">
-                                      <input type="username" className="form-control mx-5" id="code"
-                                          placeholder="Student Code"
-                                                  style={{
-                                                      borderStyle: 'none',
-                                                      borderBottomWidth: '2px',
-                                                      borderBottom: 'solid',
-                                                      zIndex: '1'
-                                          }}></input>
-                                  </div>
-                              </div>
-                              <br />
-                              <div className="row">
-                                  <div className="col-12 d-flex justify-content-center">
-                                      <input type="username" className="form-control mx-5" id="email"
-                                          placeholder="Administrator Email"
-                                          style={{
-                                                      borderStyle: 'none',
-                                                      borderBottomWidth: '2px',
-                                                      borderBottom: 'solid',
-                                                      zIndex: '1'
-                                          }}></input>
-                                  </div>
-                              </div>
-                              
+                                    <h1 className="font-weight-bold">Reader Feeder</h1>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12 d-flex justify-content-center">
+                                    <input type="username" className="form-control mx-5" id="code"
+                                        placeholder="Student Code"
+                                                style={{
+                                                    borderStyle: 'none',
+                                                    borderBottomWidth: '2px',
+                                                    borderBottom: 'solid',
+                                                    zIndex: '1'
+                                        }}></input>
+                                </div>
+                            </div>
+                            <br />
+                            <div className="row">
+                                <div className="col-12 d-flex justify-content-center">
+                                    <input type="username" className="form-control mx-5" id="email"
+                                        placeholder="Administrator Email"
+                                        style={{
+                                                    borderStyle: 'none',
+                                                    borderBottomWidth: '2px',
+                                                    borderBottom: 'solid',
+                                                    zIndex: '1'
+                                        }}></input>
+                                </div>
+                            </div>
+                            
 
-                              <div className="row">
-                                  <div className="col-12 d-flex justify-content-center">
-                                      <input type="password" className="form-control mx-5" id="password"
-                                          placeholder="Password"
-                                          style={{
-                                                      borderStyle: 'none',
-                                                      borderBottomWidth: '2px',
-                                                      borderBottom: 'solid',
-                                                      zIndex: '1'
-                                          }}></input>
-                                  </div>
-                              </div>
-                              <br />
-                              <div className="row">
-                                  <div className="col-12 d-flex justify-content-around">
-                                      Forgot Password
-                                  </div>
-                              </div>
+                            <div className="row">
+                                <div className="col-12 d-flex justify-content-center">
+                                    <input type="password" className="form-control mx-5" id="password"
+                                        placeholder="Password"
+                                        style={{
+                                                    borderStyle: 'none',
+                                                    borderBottomWidth: '2px',
+                                                    borderBottom: 'solid',
+                                                    zIndex: '1'
+                                        }}></input>
+                                </div>
+                            </div>
+                            <br />
+                            <div className="row">
+                                <div className="col-12 d-flex justify-content-around">
+                                    Forgot Password
+                                </div>
+                            </div>
 
-                              <div className="row">
-                                  <div className="col-12 d-flex justify-content-around">
-                                      <a href="dashboard1.html"><button className="btn-danger">Log
-                                              In</button></a>
-                                  </div>
-                              </div>
+                            <div className="row">
+                                <div className="col-12 d-flex justify-content-around">
+                                    <Link to="/TeacherDashboard"><button className="btn-danger">Log
+                                            In </button></Link >
+                                </div>
+                            </div>
 
                           </div>
                       </div>

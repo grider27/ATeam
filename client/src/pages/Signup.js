@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -58,9 +59,9 @@ const Signup = () => {
 
                     </form>
 
-                    <a className="nav-link" href="dashboard1.html">
+                    <Link to="/TeacherDashboard">
                         <button className="submit-btn">Create Account</button>
-                    </a>
+                    </Link>
 
                 </div>
 
