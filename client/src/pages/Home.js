@@ -26,27 +26,23 @@ const Home = () => {
                         borderBottomRightRadius: '50px'
                         }}>
          
-                    <div className="col-2" style={{
-                        height: '90vh',
-                        borderLeftStyle: 'solid',
-                        borderLeftWidth: '80px'
+                    <div className="col-2" id="spine" style={{
+                        // height: '90vh',
+                        // borderLeftStyle: 'solid',
+                        // borderLeftWidth: '80px'
             }}>
 
             </div>
             <div className="col-8">
                 <div className="row">
-                            <div className="col-12 d-flex justify-content-end" style={{
+                            <div className="col-sm-12 col-lg-12 d-flex justify-content-end" style={{
                                 height: '10vh',
                                 zIndex: '1'
                             }}>
                                     
                             <div className="shape-outer heptagon">
                                 <div className="shape-inner heptagon">
-                                            <h4 style=
-                                                {{
-                                                marginTop: '35px',
-                                                color:'red'
-                                                }}><Link to={"/Signup"}>Enroll!</Link></h4>
+                                            <h4 id="enrollBtn"><Link to={"/Signup"}>Enroll!</Link></h4>
                                 </div>
                             </div>
                         
@@ -54,14 +50,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-8 offset-2 ">
-                                <div className="login" style={{
-                                    background: 'white',
-                                    borderRadius: '100px',
-                                    border: 'solid',
-                                    borderWidth: '5px'
-                                    
-                        }}>
+                    < div className = "col-sm-8 col-lg-8 offset-lg-2 offset-sm-2 " >
+                            <div className="login" id="loginBlock">
                             <div className="row">
                                 <div className="col-12">
 

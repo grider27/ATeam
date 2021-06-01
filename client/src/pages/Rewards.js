@@ -6,34 +6,14 @@ const Rewards= ()=> {
     
           <div className="content" >
               <NavBar />
-        {/* <nav className="navbar navbar-expand-lg">
-            <a className="navbar-brand" href="#">Reader-Feeder</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="dashboard1.html">Home <span className="sr-only">(current)</span></a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="manage1.html">Add/Manage Student</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="index5.html">Sign Out</a>
-                    </li>
-                </ul>
-            </div>
-        </nav> */}
 
         <div className="container">
             <div className="row">
-                <div className="col-12">
+                <div className="col-sm-12 col-lg-12">
                     <h1 className="font-weight-bold">Hello Teacher</h1>
                 </div>
             </div>
-            <table className="table" style={{background: "white", borderRadius: "50px", borderTopStyle: "none" }}>
+            <table className="table table-borderless table-hover table-responsive-sm" style={{background: "white", borderRadius: "50px"}}>
                 <thead >                        
                     <tr>
                         
