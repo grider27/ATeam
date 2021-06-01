@@ -17,18 +17,20 @@ const ManageStudents = () => {
                 </div>
                 <div className="row">
 
-                <div className="col-6">
+                <div className="col-4">
                     <input type="name" className="form-control" id="name" placeholder="Name" />
                 </div>
-                <div className="col-6">
+                <div className="col-4">
                     <input type="email" className="form-control" id="email" placeholder="Email" />
+                </div>
+                <div className="col-4">
+                    <button type="button" className = "btn-primary btn-sm" > Add Student </button>
                 </div>
                 </div>
 
             </section>
         </main>
         
-  
     </div>
 </div>
  );
