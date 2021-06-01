@@ -4,8 +4,6 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'PT Sans', sans-serif; 
 */
 
-
-
 /* 
 color pallet    
 dark-ben-franklin #0f4d90
@@ -23,8 +21,6 @@ phanatic-green #3a833c
 love-park-red #cc3000
 pride-purple #9400c6
 */
-
-
 
 /* .custom-shape-divider-top-1621374780 {
     margin: -5,5,0,-5;
@@ -56,9 +52,9 @@ pride-purple #9400c6
 } */
 
 .border {
-border: red 5px;
-border-style: solid;
-border-width: 5px;
+  border: red 5px;
+  border-style: solid;
+  border-width: 5px;
 }
 
 /** For mobile devices **/
@@ -69,175 +65,184 @@ border-width: 5px;
     }
 } */
 
-
-body{
-    background-color: #f3c613;
-    background-size: cover;
+body {
+  background-color: #f3c613;
+  background-size: cover;
 }
 
 #book {
-    background-image: url(../imgs/composition-bg.png);
+  background-image: url(../imgs/composition-bg.png);
 }
 #spine {
-    border-left-width: 80px;
-    height: 90vh;
-    border-left-style: solid;
+  border-left-width: 80px;
+  height: 90vh;
+  border-left-style: solid;
 }
 
 #loginBlock {
-    background: white;
-    border-radius: 100px;
-    border: solid;
-    border-width: 5px;
+  background: white;
+  border-radius: 100px;
+  border: solid;
+  border-width: 5px;
 }
 
 .shadow {
-  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
   /* Similar syntax to box-shadow */
 }
 
 .custom-shape-divider-top-1621465308 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .custom-shape-divider-top-1621465308 svg {
-    position: relative;
-    display: block;
-    width: calc(196% + 1.3px);
-    height: 363px;
+  position: relative;
+  display: block;
+  width: calc(196% + 1.3px);
+  height: 363px;
 }
 
 .custom-shape-divider-top-1621465308 .shape-fill {
-    fill: #9f00d9ff;
+  fill: #9f00d9ff;
 }
 
 svg {
-    /* position: absolute;
+  /* position: absolute;
     left: 0;
     top: 0; */
-    z-index: -1;
+  z-index: -1;
 }
 
 button {
-    margin: 2vh 2vh !important;
-    padding: 1vh !important;
-    border-radius: 100px !important;
-    border: none !important;
+  margin: 2vh 2vh !important;
+  padding: 1vh !important;
+  border-radius: 100px !important;
+  border: none !important;
 }
 
 h1 {
-    font-family: sans-serif;
-    color: black;
-    padding: 2vh;
-
+  font-family: sans-serif;
+  color: black;
+  padding: 2vh;
 }
 
 .intro {
-    float: right;
-    
+  float: right;
 }
 
 .custom-shape-divider-bottom-1621466425 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .custom-shape-divider-bottom-1621466425 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 275px;
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 275px;
 }
 
 .custom-shape-divider-bottom-1621466425 .shape-fill {
-    fill:#9f00d9ff;
-    /* fill: url(assets/imgs/retro-bg.jpg) */
+  fill: #9f00d9ff;
+  /* fill: url(assets/imgs/retro-bg.jpg) */
 }
 
 .container {
-    z-index: 1;
-    border-width:1px 0;
-    list-style:none;
-    /* margin:0;
+  z-index: 1;
+  border-width: 1px 0;
+  list-style: none;
+  /* margin:0;
     padding:0; */
-    text-align:center;
-    position:relative;
-    height:250px; 
+  text-align: center;
+  position: relative;
+  height: 250px;
 }
 
 nav {
-    background-color: #9f00d9ff;
-    color: white;
+  background-color: #9f00d9ff;
+  color: white;
 }
-.navbar-brand, .nav-link {
-    color: white;
+.navbar-brand,
+.nav-link {
+  color: white;
 }
 
 .btn-success {
-    /* padding: 0 !important; */
-    margin: 0 !important;
+  /* padding: 0 !important; */
+  margin: 0 !important;
 }
 
-.btn-primary{
-    /* padding: 0 !important; */
-    margin: 0 !important;
+.btn-primary {
+  /* padding: 0 !important; */
+  margin: 0 !important;
 }
 
 #enrollBtn {
-    margin-top: 30px;
-    color:red;
+  margin-top: 30px;
+  color: red;
 }
 
-.table
- {
-    border-top-style: none !important;
+.table {
+  border-top-style: none !important;
 }
 
 .shape-outer {
-    display: flex;
-    flex-shrink: 0;
-    height: calc(75px + 2vw);
-    width: calc(75px + 2vw);
-    /* margin: 25px; */
-    background-image: linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5);
+  display: flex;
+  flex-shrink: 0;
+  height: calc(75px + 2vw);
+  width: calc(75px + 2vw);
+  /* margin: 25px; */
+  background-image: linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5);
 }
 
-.shape-inner {	
-    height: calc(65px + 2vw);
-    width: calc(65px + 2vw);
-    background: greenyellow;
-    background-size: cover;
-    margin: auto;
+.shape-inner {
+  height: calc(65px + 2vw);
+  width: calc(65px + 2vw);
+  background: greenyellow;
+  background-size: cover;
+  margin: auto;
 }
 
 .heptagon {
-    -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 62%, 75% 100%, 25% 100%, 0% 62%, 10% 20%);
-    		clip-path: polygon(50% 0%, 90% 20%, 100% 62%, 75% 100%, 25% 100%, 0% 62%, 10% 20%);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 62%,
+    75% 100%,
+    25% 100%,
+    0% 62%,
+    10% 20%
+  );
+  clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 62%,
+    75% 100%,
+    25% 100%,
+    0% 62%,
+    10% 20%
+  );
 }
 
 .navbar-toggler-icon {
-    border-style: solid;
+  border-style: solid;
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    /* background-color: lightblue; */
-  }
-
   #spine {
-      border-left-width: 40px;
-      height: 90vh;
-      border-left-style: solid,
+    border-left-width: 40px;
+    height: 90vh;
+    border-left-style: solid;
   }
 
   #loginBlock {
@@ -245,10 +250,14 @@ nav {
     border-radius: 100px;
     border: solid;
     border-width: 5px;
-}
-#enrollBtn {
+  }
+  #enrollBtn {
     margin-top: 25px;
-    color:red;
+    color: red;
+  }
 }
 
+/* Dashboard CSS. Material-UI */
+.MuiContainer-root {
+  background-image: url('../imgs/composition-bg.png');
 }
