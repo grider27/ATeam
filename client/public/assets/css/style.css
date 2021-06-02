@@ -4,6 +4,17 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'PT Sans', sans-serif; 
 */
 
+
+
+@font-face {
+    font-family: 'bubble_rainbowregular';
+    src: url('bubble_rainbow-webfont.woff2') format('woff2'),
+         url('bubble_rainbow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* 
 color pallet    
 dark-ben-franklin #0f4d90
@@ -65,6 +76,18 @@ pride-purple #9400c6
     }
 } */
 
+
+
+body{
+    /* background-color: #f3c613; */
+    background-image: url(../imgs/wood-background.jpg);
+    background-size: cover;
+}
+
+#book {
+    background-image: url(../imgs/composition-bg.png);
+    background-size: cover;
+
 body {
   background-color: #f3c613;
   background-size: cover;
@@ -72,6 +95,7 @@ body {
 
 #book {
   background-image: url(../imgs/composition-bg.png);
+  
 }
 #spine {
   border-left-width: 80px;
@@ -185,6 +209,32 @@ nav {
 .btn-primary {
   /* padding: 0 !important; */
   margin: 0 !important;
+}
+
+.enroll {
+    font-family: 'bubble_rainbowregular', Arial, sans-serif;
+    color:#b387c5;
+    font-weight: bolder;
+    font-size:72px;
+    margin: 0px;
+    padding: 0px;
+     /* -ms-transform: rotate(20deg); /* IE 9 */
+   /* transform: rotate(20deg);  */
+    height: 80px;
+
+}
+
+
+
+
+.rainbow-text {
+    -webkit-text-stroke-width: 1px ; /* width and color */
+    -webkit-text-stroke-color: whitesmoke;
+  /* background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); */
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  margin: 0px;
+    padding: 0px;
 }
 
 #enrollBtn {
