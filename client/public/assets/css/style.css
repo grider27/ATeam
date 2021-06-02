@@ -259,5 +259,6 @@ nav {
 
 /* Dashboard CSS. Material-UI */
 .MuiContainer-root {
-  background-image: url('../imgs/composition-bg.png');
+  background-color: #9f00d9ff;
+  /* background-image: url('../imgs/composition-bg.png'); */
 }
