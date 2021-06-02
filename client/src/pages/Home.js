@@ -1,7 +1,3 @@
-// const enroll = () => (
-//     <link to="/Signup"> Enroll! </link>
-//         )
-
 import { Link } from "react-router-dom";
 
 const Home = () => {

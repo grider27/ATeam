@@ -1,12 +1,10 @@
-import NavBar from '../components/navbar'
+import NavBar from '../components/navbar';
 
-const Rewards= ()=> {
+const Rewards = () => {
   return (
-    <div className="wrapper" style={{backgroundColor: "#f3c613"}}>
-    
-          <div className="content" >
-              <NavBar />
-
+    <div className="wrapper" style={{ backgroundColor: '#f3c613' }}>
+      <div className="content">
+        <NavBar />
         <div className="container">
             <div className="row">
                 <div className="col-sm-12 col-lg-12">
@@ -142,12 +140,11 @@ const Rewards= ()=> {
             </table>
 
 
+
         </div>
-        
+      </div>
     </div>
-</div>
-    );
-}
+  );
+};
 
-
-export default Rewards
+export default Rewards;

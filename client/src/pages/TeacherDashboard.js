@@ -13,26 +13,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems, secondaryListItems } from '../components/listItems';
-import Chart from '../components/Chart';
+import { mainListItems } from '../components/listItems';
 import Rewards from '../components/Rewards';
 import Classroom from '../components/Classroom';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        A-Team
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Stars from '../components/Stars';
 
 const drawerWidth = 240;
 
@@ -153,7 +139,7 @@ export default function Dashboard() {
             noWrap
             className={classes.title}
           >
-            Teacher Dashboard
+            Dashboard (Temporary)
           </Typography>
         </Toolbar>
       </AppBar>
@@ -171,8 +157,6 @@ export default function Dashboard() {
         </div>
         <Divider />
         <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -181,7 +165,8 @@ export default function Dashboard() {
             {/* Class Progress Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                <Stars />
+                <Stars />
               </Paper>
             </Grid>
             {/* Rewards Progress */}
@@ -197,9 +182,7 @@ export default function Dashboard() {
               </Paper>
             </Grid>
           </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
+          <Box pt={4}></Box>
         </Container>
       </main>
     </div>

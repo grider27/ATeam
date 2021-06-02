@@ -4,10 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
 const useStyles = makeStyles({
   depositContext: {
     flex: 1,
@@ -20,13 +16,13 @@ export default function Rewards() {
     <React.Fragment>
       <Title>Rewards Progress</Title>
       <Typography component="p" variant="h4">
-        2400
+        20
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
         Total Books Read
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
+        <Link color="primary" href="/rewards">
           View Rewards
         </Link>
       </div>
