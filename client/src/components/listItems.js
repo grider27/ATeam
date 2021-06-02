@@ -6,8 +6,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
+// import PeopleIcon from '@material-ui/icons/People';
+// import BarChartIcon from '@material-ui/icons/BarChart';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import WcIcon from '@material-ui/icons/Wc';
 
@@ -22,19 +22,19 @@ export const mainListItems = (
       <ListItemText primary="Parents" />
     </ListItem>
     {/* student management button */}
-    <ListItem button component={Link} to="/ManageStudents">
+    {/* <ListItem button component={Link} to="/ManageStudents">
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary="Manage Students" />
-    </ListItem>
+    </ListItem> */}
     {/* rewards page button */}
-    <ListItem button component={Link} to="/rewards">
+    {/* <ListItem button component={Link} to="/rewards">
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary="Rewards" />
-    </ListItem>
+    </ListItem> */}
     {/* password reset button */}
     <ListItem button component={Link} to="/passwordreset">
       <ListItemIcon>
