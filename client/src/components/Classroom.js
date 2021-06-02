@@ -41,7 +41,7 @@ export default function Classroom() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Kindergarden</Title>
+      <Title>Classroom</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
