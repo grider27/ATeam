@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,22 +15,12 @@ function createData(id, date, name, completedBooks, rewardProgress) {
 }
 
 const rows = [
-  createData(
-    0,
-    'May, 2021',
-    'Elvis Presley',
-    '4',
-    'Stars can go here instead of percent'
-  ),
+  createData(0, 'May, 2021', 'Elvis Presley', '4', '40%'),
   createData(1, 'May, 2021', 'Paul McCartney', '5', '50%'),
   createData(2, 'May, 2021', 'Tom Scholz', '3', '30%'),
   createData(3, 'May, 2021', 'Michael Jackson', '7', '70%'),
   createData(4, 'May, 2021', 'Bruce Springsteen', '2', '20%'),
 ];
-
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 const useStyles = makeStyles((theme) => ({
   seeMore: {
@@ -41,7 +32,7 @@ export default function Classroom() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Kindergarden</Title>
+      <Title>Classroom</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
@@ -63,8 +54,8 @@ export default function Classroom() {
         </TableBody>
       </Table>
       <div className={classes.seeMore}>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View More Students
+        <Link color="primary" href="/managestudents">
+          Manage Students
         </Link>
       </div>
     </React.Fragment>
