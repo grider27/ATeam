@@ -12,13 +12,27 @@ const Rewards= ()=> {
                 <div className="col-sm-12 col-lg-12">
                     <h1 className="font-weight-bold">Hello Teacher</h1>
                 </div>
-            </div>
+                  </div>
+                  
+            <div className="row">
+                <div className="col-sm-2 col-lg-2">
+                    Bart Simpson
+                      </div>
+                       <div className="col-sm-8 col-lg-8">
+                          <div className="slide">
+                              <input type="range" min="0" max="100" value="10" />
+                              <div className="result_box">10</div></div>
+                </div>
+                  </div>
+
+
             <table className="table table-borderless table-hover table-responsive-sm" style={{background: "white", borderRadius: "50px"}}>
                 <thead >                        
                     <tr>
                         
                         <th scope="col">Student Name</th>
                         <th scope="col"></th>
+                        <th></th>
                         <th scope="col">1</th>
                         <th scope="col">2</th>
                         <th scope="col">3</th>
