@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./config/db');
+//const connectDB = require('./config/db');
 //const path = require('path');
 //const helmet = require('helmet');
 const routes = require("./routes");
@@ -7,7 +7,15 @@ const routes = require("./routes");
 const app = express();
 
 // Connect Database
-connectDB();
+//connectDB();
+
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/readerfeeder", {
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useNewUrlParser: true,  
+  useUnifiedTopology: true  
+}).then(() => console.log(" DB Connected"))
+  .catch(err => console.log(err));
 
 // Init Middleware
 // app.use(express.json({ extended: false }));
