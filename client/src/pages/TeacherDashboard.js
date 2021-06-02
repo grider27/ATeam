@@ -16,10 +16,9 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from '../components/listItems';
-import Chart from '../components/Chart';
 import Rewards from '../components/Rewards';
 import Classroom from '../components/Classroom';
-import Copyright from '../components/Copyright';
+import Stars from '../components/Stars';
 
 const drawerWidth = 240;
 
@@ -166,7 +165,8 @@ export default function Dashboard() {
             {/* Class Progress Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                <Stars />
+                <Stars />
               </Paper>
             </Grid>
             {/* Rewards Progress */}
@@ -182,9 +182,7 @@ export default function Dashboard() {
               </Paper>
             </Grid>
           </Grid>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
+          <Box pt={4}></Box>
         </Container>
       </main>
     </div>
