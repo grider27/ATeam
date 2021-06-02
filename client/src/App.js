@@ -1,12 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import TeacherDashboard from './pages/TeacherDashboard';
+import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Rewards from './pages/Rewards';
 import PasswordReset from './pages/PasswordReset';
 import ManageStudents from './pages/ManageStudents';
+import TeacherDashboard from './pages/TeacherDashboard';
+
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -21,11 +24,14 @@ export default function App() {
           <Route path="/rewards">
             <Rewards />
           </Route>
-          <Route path="/ManageStudents">
+          <Route path="/managestudents">
             <ManageStudents />
-            </Route>
+          </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/teacherdashboard">
             <TeacherDashboard />
@@ -34,6 +40,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
