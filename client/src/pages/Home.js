@@ -118,7 +118,7 @@ const Home = () => {
 
                       <div className="row">
                         <div className="col-12 d-flex justify-content-around">
-                          <Link to="/TeacherDashboard">
+                          <Link to="/dashboard">
                             <button className="btn-danger">Log In </button>
                           </Link>
                         </div>
