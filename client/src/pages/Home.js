@@ -64,7 +64,7 @@ const Home = () => {
                   <div className="col-sm-8 col-lg-8 offset-lg-2 offset-sm-2 ">
                     <div className="login" id="loginBlock">
                       <div className="row">
-                        <div className="col-12">
+                        <div className="col-12"><img class="logo" src="assets/imgs/books.png" />
                           <h1 className="font-weight-bold">Reader Feeder</h1>
                         </div>
                       </div>
@@ -127,7 +127,7 @@ const Home = () => {
 
                       <div className="row">
                         <div className="col-12 d-flex justify-content-around">
-                          <Link to="/TeacherDashboard">
+                          <Link to = {'/Menu'}>
                             <button className="btn-danger">Log In </button>
                           </Link>
                         </div>

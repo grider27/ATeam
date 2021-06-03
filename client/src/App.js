@@ -8,6 +8,7 @@ import Rewards from './pages/Rewards';
 import PasswordReset from './pages/PasswordReset';
 import ManageStudents from './pages/ManageStudents';
 import TeacherDashboard from './pages/TeacherDashboard';
+import Menu from './pages/Menu';
 
 import Footer from './components/Footer';
 
@@ -36,9 +37,13 @@ export default function App() {
           <Route path="/teacherdashboard">
             <TeacherDashboard />
           </Route>
+          <Route path="/menu">
+            <Menu />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
+           
         </Switch>
         <Footer />
       </div>
