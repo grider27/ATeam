@@ -2,17 +2,17 @@
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
-A brief description of what this project does and who it's for
+We created an application to incentivize kids to read more books by offering them rewards for completing a certain number of books read in a predefined period.
 
 ## Deployment
 
 Project deployed to Heroku
 
-[Link Coming Soon](https://https://id.heroku.com/login)
+[Reader Feeder](https://readerfeeder.herokuapp.com/)
 
-## Screenshots
+## Screenshot
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<img src="./screenshot.png" width="400" />
 
 ## License
 
