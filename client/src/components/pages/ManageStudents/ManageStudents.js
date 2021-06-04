@@ -1,10 +1,9 @@
-import NavBar from '../components/navbar';
+import React from 'react';
 
 const ManageStudents = () => {
   return (
     <div className="wrapper">
       <div className="content">
-        <NavBar />
         <main className="container block">
           <section>
             <div className="row">
