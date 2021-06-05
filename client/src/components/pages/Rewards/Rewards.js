@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -10,8 +11,16 @@ const useStyles = makeStyles({
 });
 
 function valuetext(value) {
-  return `${value}°C`;
+  return `${value} Reading Goal`;
 }
+
+// const [val, setVal]=useState([0,4])
+
+// const updateGoal = (e, data) => {
+//   setVal(data)
+// }
+
+
 
 const BookSlider = withStyles({
   root: {
@@ -37,15 +46,27 @@ const BookSlider = withStyles({
     height: 15,
     borderRadius: 4,
   },
+  mark: {
+    backgroundColor: 'darkblue',
+    height: 8,
+    width: 1,
+    marginTop: -3,
+  },
   rail: {
     height: 15,
     borderRadius: 4,
   },
 })(Slider);
 
+// const handleChange = (event, value) => {
+//   // this.setState({ value })
+//   if (value === Slider.max)
+
+// };
 
 const Rewards = () => {
   return (
+    
     <div className="wrapper">
       <div className="content">
         <div className="container">
@@ -60,101 +81,25 @@ const Rewards = () => {
             <div className="col-sm-8 col-lg-8">
               <div className="slide">
               <BookSlider
-                defaultValue={1}
+                defaultValue={5}
                 getAriaValueText={valuetext}
+                onChange={(e, value) => {
+
+                }}
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 step={1}
                 marks
-                min={1}
+                min={0}
                 max={10}
               />
               </div>
             </div>
             <div className="col-sm-2 col-lg-2">
-              <button>Reward</button>
+            <Link to="/certificate"> <button>Reward</button></Link>
             </div>
           </div>
-          <div className="row">
-            <div className="col-sm-2 col-lg-2">Nelson Muntz</div>
-            <div className="col-sm-8 col-lg-8">
-              <div className="slide">
-              <Slider
-                defaultValue={1}
-                getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={1}
-                marks
-                min={1}
-                max={10}
-              />
-              </div>
-            </div>
-            <div className="col-sm-2 col-lg-2">
-              <button>Reward</button>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-2 col-lg-2">Lisa Simpson</div>
-            <div className="col-sm-8 col-lg-8">
-              <div className="slide">
-              <Slider
-                defaultValue={1}
-                getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={1}
-                marks
-                min={1}
-                max={10}
-              />
-              </div>
-            </div>
-            <div className="col-sm-2 col-lg-2">
-              <button>Reward</button>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-2 col-lg-2">Martin Prince</div>
-            <div className="col-sm-8 col-lg-8">
-              <div className="slide">
-              <Slider
-                defaultValue={1}
-                getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={1}
-                marks
-                min={1}
-                max={10}
-              />
-              </div>
-            </div>
-            <div className="col-sm-2 col-lg-2">
-              <button>Reward</button>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-2 col-lg-2">Ralph Wiggum</div>
-            <div className="col-sm-8 col-lg-8">
-              <div className="slide">
-              <Slider
-                defaultValue={1}
-                getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={1}
-                marks
-                min={1}
-                max={10}
-              />
-              </div>
-            </div>
-            <div className="col-sm-2 col-lg-2">
-              <button>Reward</button>
-            </div>
-          </div>
+          
   
 
         

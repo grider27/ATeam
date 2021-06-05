@@ -11,6 +11,7 @@ import Rewards from '../pages/Rewards/Rewards';
 import ManageStudents from '../pages/ManageStudents/ManageStudents';
 import TeacherDashboard from '../pages/TeacherDashboard/TeacherDashboard';
 import Menu from '../pages/Menu/Menu';
+import Certificate from '../pages/Certificate/Certificate';
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/rewards" component={Rewards} />
         <PrivateRoute exact path="/managestudents" component={ManageStudents} />
+        <PrivateRoute exact path="/certificate" component={Certificate} />
         <PrivateRoute
           exact
           path="/teacherdashboard"
