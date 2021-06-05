@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
   return (
@@ -9,55 +10,61 @@ const Menu = () => {
           <div className="row">
             <div className="col-xs-12 col-sm-6">
               <div className="card">
+              <Link to="/rewards"> 
                 <a className="img-card" href="/teacherdashboard">
                   <img
                     src={'./img/School_Monochromatic.png'}
                     alt="kids walking to school"
                   />
-                </a>
+                  </a>
+                  </Link>
                 <div className="card-content">
+                  
                   <h4 className="card-title">
-                    <a href="#">USER LAST NAME Classroom </a>
+                  <Link to="/rewards"> <a href="#">USER LAST NAME Classroom </a> </Link>
                   </h4>
                   <p className="">
                     Track the progress of your students reading goals.
                   </p>
                 </div>
-                <div
+                <Link to="/rewards"> <div
                   className="card-read-more"
-                  style={{ backgroundColor: 'lightskyblue' }}
-                >
+                  style={{ backgroundColor: 'lightskyblue' }} >
+                  
                   <a
                     href="/teacherdashboard"
                     className="btn btn-link btn-block"
                   >
                     <span className="material-icons">forward </span>
                   </a>
-                </div>
+                </div></Link>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6">
               <div className="card">
-                <a className="img-card" href="/dashboard">
+              <Link to="/managestudents"> 
+                <a className="img-card" href="/managestudents">
                   <img
                     src="./img/Teacher_Isometric.png"
                     alt="teacher in front of class"
                   />
-                </a>
+                  </a>
+                  </Link>
                 <div className="card-content">
                   <h4 className="card-title">
-                    <a href="#">SCHOOL NAME </a>
+                  <Link to="/managestudents"> <a href="/managestudents">SCHOOL NAME </a> </Link>
                   </h4>
                   <p className="">Manage your school, teachers, and rewards.</p>
                 </div>
-                <div
+                <Link to="/managestudents"> <div
                   className="card-read-more"
                   style={{ backgroundColor: 'navajowhite' }}
                 >
-                  <a href="#l" className="btn btn-link btn-block ">
+                  <a href="/managestudents" className="btn btn-link btn-block ">
                     <span className="material-icons">forward </span>
                   </a>
                 </div>
+                  </Link>
               </div>
             </div>
           </div>
