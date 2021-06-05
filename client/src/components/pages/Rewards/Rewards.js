@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import { Link } from 'react-router-dom';
+import API from "../../../utils/API";
+import { List, ListItem } from "../../../components/List";
 
 const useStyles = makeStyles({
   root: {
     width: 300,
   },
-});
+})
+
+
 
 function valuetext(value) {
   return `${value} Reading Goal`;
@@ -65,8 +69,25 @@ const BookSlider = withStyles({
 // };
 
 const Rewards = () => {
+
+  useEffect(() => {
+    loadStudents();
+  }, [loadStudents]);
+
+  const [students, setStudents] = useState([])
+
+  function loadStudents() {
+    API.getStudents()
+      .then(res =>
+        //console.log(res.data)
+        setStudents(res.data)
+
+      )
+      .catch(err => console.log(err));
+  };
+
   return (
-    
+
     <div className="wrapper">
       <div className="content">
         <div className="container">
@@ -76,33 +97,63 @@ const Rewards = () => {
             </div>
           </div>
 
-          <div className="row">
+          {students.length ? (
+            <List>
+              {students.map(student => (
+                <ListItem key={student._id}>
+                  <Link to={"/students/" + student._id}>
+                    <strong>
+                      {student.name}  &emsp;
+                    </strong>
+                  </Link>
+                  <BookSlider
+                    defaultValue={5}
+                    getAriaValueText={valuetext}
+                    onChange={(e, value) => {
+
+                    }}
+                    aria-labelledby="discrete-slider"
+                    valueLabelDisplay="auto"
+                    step={1}
+                    marks
+                    min={0}
+                    max={10}
+                  />
+                  <Link to="/certificate"> <button>Reward</button></Link>
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+
+          {/* <div className="row">
             <div className="col-sm-2 col-lg-2">Bart Simpson</div>
             <div className="col-sm-8 col-lg-8">
               <div className="slide">
-              <BookSlider
-                defaultValue={5}
-                getAriaValueText={valuetext}
-                onChange={(e, value) => {
+                <BookSlider
+                  defaultValue={5}
+                  getAriaValueText={valuetext}
+                  onChange={(e, value) => {
 
-                }}
-                aria-labelledby="discrete-slider"
-                valueLabelDisplay="auto"
-                step={1}
-                marks
-                min={0}
-                max={10}
-              />
+                  }}
+                  aria-labelledby="discrete-slider"
+                  valueLabelDisplay="auto"
+                  step={1}
+                  marks
+                  min={0}
+                  max={10}
+                />
               </div>
             </div>
             <div className="col-sm-2 col-lg-2">
-            <Link to="/certificate"> <button>Reward</button></Link>
+              <Link to="/certificate"> <button>Reward</button></Link>
             </div>
-          </div>
-          
-  
+          </div> */}
 
-        
+
+
+
         </div>
       </div>
     </div>
