@@ -55,7 +55,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/menu" />;
   }
 
   return (
@@ -68,7 +68,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="firstName"
+            placeholder="First Name"
             name="firstName"
             value={firstName}
             onChange={(e) => onChange(e)}
@@ -77,7 +77,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="lastName"
+            placeholder="Last Name"
             name="lastName"
             value={lastName}
             onChange={(e) => onChange(e)}
@@ -86,7 +86,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="schoolName"
+            placeholder="School Name"
             name="schoolName"
             value={schoolName}
             onChange={(e) => onChange(e)}
@@ -96,7 +96,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="address"
+            placeholder="Address"
             name="address"
             value={address}
             onChange={(e) => onChange(e)}
@@ -105,7 +105,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="city"
+            placeholder="City"
             name="city"
             value={city}
             onChange={(e) => onChange(e)}
@@ -114,7 +114,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="state"
+            placeholder="State"
             name="state"
             value={state}
             onChange={(e) => onChange(e)}
@@ -123,7 +123,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="zipcode"
+            placeholder="Zip Code"
             name="zipcode"
             value={zipcode}
             onChange={(e) => onChange(e)}
