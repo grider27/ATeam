@@ -1,9 +1,8 @@
-config/production.json
-config/default.json
 .idea/
 
 # dependencies
 **/node_modules
+**/package-lock.json
 /.pnp
 .pnp.js
 
