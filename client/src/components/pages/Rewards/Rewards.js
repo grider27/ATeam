@@ -1,10 +1,9 @@
-import NavBar from '../components/navbar';
+import React from 'react';
 
 const Rewards = () => {
   return (
     <div className="wrapper">
       <div className="content">
-        <NavBar />
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-lg-12">

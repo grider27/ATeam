@@ -1,18 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import NavBar from '../components/navbar';
+import React from 'react';
 
 const Menu = () => {
   return (
     <div className="wrapper">
       <div className="content">
-        <NavBar />
         <main className="container">
           <div className="row">
             <div className="col-xs-12 col-sm-6">
               <div className="card">
-                <a className="img-card" href="/TeacherDashboard">
+                <a className="img-card" href="/teacherdashboard">
                   <img
-                    src="assets/imgs/School_Monochromatic.png"
+                    src={'./img/School_Monochromatic.png'}
                     alt="kids walking to school"
                   />
                 </a>
@@ -29,7 +28,7 @@ const Menu = () => {
                   style={{ backgroundColor: 'lightskyblue' }}
                 >
                   <a
-                    href="/TeacherDashboard"
+                    href="/teacherdashboard"
                     className="btn btn-link btn-block"
                   >
                     <span className="material-icons">forward </span>
@@ -39,9 +38,9 @@ const Menu = () => {
             </div>
             <div className="col-xs-12 col-sm-6">
               <div className="card">
-                <a className="img-card" href="#">
+                <a className="img-card" href="/dashboard">
                   <img
-                    src="assets/imgs/Teacher_Isometric.png"
+                    src="./img/Teacher_Isometric.png"
                     alt="teacher in front of class"
                   />
                 </a>
