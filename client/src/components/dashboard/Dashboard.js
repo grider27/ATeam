@@ -21,8 +21,7 @@ const Dashboard = ({
         Welcome to your Reader Feeder DashBoard!
       </h1>
       <p className="lead">
-        <i className="fas fa-user" /> Welcome {user && user.firstName}
-        {user && user.lastName}
+        <i className="fas fa-user" /> Welcome {user && user.firstName} {user && user.lastName}
       </p>
     </Fragment>
   );
