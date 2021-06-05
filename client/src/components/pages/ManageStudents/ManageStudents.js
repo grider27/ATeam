@@ -3,11 +3,15 @@ import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/DeleteForever';
 
 //vkh
-import React, { Fragment, useEffect } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../../layout/Spinner';
 import { getCurrentProfile } from '../../../actions/profile';
+import API from "../../../utils/API";
+import { List, ListItem } from "../../../components/List";
+import DeleteBtn from "../../../components/DeleteBtn";
+import { Link } from "react-router-dom";
 
 const ManageStudents = ({
   getCurrentProfile,
@@ -16,76 +20,137 @@ const ManageStudents = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
+    loadStudents();
   }, [getCurrentProfile]);
+
+  const [formObject, setFormObject] = useState({})
+  const [students, setStudents] = useState([])
+
+  function loadStudents() {
+    API.getStudents()
+      .then(res =>
+        //console.log(res.data)
+        setStudents(res.data)
+
+      )
+      .catch(err => console.log(err));
+  };
+
+  function deleteStudent(id) {
+    API.deleteStudent(id)
+      .then(res => loadStudents())
+      .catch(err => console.log(err));
+  }
+
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value })
+  };
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.name && formObject.email) {
+      API.saveStudents({
+        name: formObject.name,
+        stars: "0",
+        email: formObject.email,
+        teacherId: user.email
+      })
+      .then(res => loadStudents())
+        .catch(err => console.log(err));
+    }
+  };
 
   return loading && profile === null ? (
     <Spinner />
-  ) :  (
+  ) : (
     <Fragment>
-    <div className="wrapper">
-      <div className="content">
-        <main className="container block">
-          <section className="bg-light border-0 p-5 m-3">
-            <div className="row">
-              <div className="col-12">
-              <h1 className="font-weight-bold">{user && user.firstName} {user && user.lastName}'s HOMEROOM <Edit color="primary"/></h1>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-              {user && user.schoolName}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-              {user && user.address}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-              {user && user.city}, {user && user.state} {user && user.zipcode}
-              </div>
-            </div>
-            </section>
-          
-            
+      <div className="wrapper">
+        <div className="content">
+          <main className="container block">
             <section className="bg-light border-0 p-5 m-3">
-            <div className="row">
-              <div className="col-12">
-                <h2 className="font-weight-bold">Add Students</h2>
+              <div className="row">
+                <div className="col-12">
+                  <h1 className="font-weight-bold">{user && user.firstName} {user && user.lastName}'s HOMEROOM <Edit color="primary" /></h1>
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-4">
-                <input
-                  type="name"
-                  className="form-control"
-                  id="name"
-                  placeholder="Name"
-                />
+              <div className="row">
+                <div className="col-12">
+                  {user && user.schoolName}
+                </div>
               </div>
-              <div className="col-4">
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  placeholder="Email"
-                />
+              <div className="row">
+                <div className="col-12">
+                  {user && user.address}
+                </div>
               </div>
-              <div className="col-4">
-                <button type="button" className="btn-primary btn-sm">
-                  Add Student
+              <div className="row">
+                <div className="col-12">
+                  {user && user.city}, {user && user.state} {user && user.zipcode}
+                </div>
+              </div>
+            </section>
+
+
+            <section className="bg-light border-0 p-5 m-3">
+              <div className="row">
+                <div className="col-12">
+                  <h2 className="font-weight-bold">Add Students</h2>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-4">
+                  <input
+                    onChange={handleInputChange}
+                    name="name"
+                    type="name"
+                    className="form-control"
+                    id="name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div className="col-4">
+                  <input
+                    onChange={handleInputChange}
+                    name="email"
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="col-4">
+                  <button type="button" className="btn-primary btn-sm"
+                    onClick={handleFormSubmit}>
+                    Add Student
                 </button>
+                </div>
               </div>
-            </div>
-          </section>
-          <section className="bg-light border-0 p-5 m-3">
-          <div className="row">
-              <div className="col-12">
-                <h2 className="font-weight-bold">Classroom</h2>
+            </section>
+            <section className="bg-light border-0 p-5 m-3">
+              <div className="row">
+                <div className="col-12">
+                  <h2 className="font-weight-bold">Classroom</h2>
+                </div>
               </div>
-            </div>
-            <div className="row">
+              {students.length ? (
+                <List>
+                  {students.map(student => (
+                    <ListItem key={student._id}>
+                      <Link to={"/students/" + student._id}>
+                        <strong>
+                          Name: {student.name}  &emsp;&emsp; Email: {student.email}
+                        </strong>
+                      </Link>
+                      <DeleteBtn onClick={() => deleteStudent(student._id)} />
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+              {/* <div className="row">
               <div className="col-5">
               <h4>Bart Simpson</h4>
               </div>
@@ -144,13 +209,13 @@ const ManageStudents = ({
                 <Edit color="primary"/>
                 <Delete color='secondary'/>
               </div>
-            </div>
-            
-           
+            </div> */}
+
+
             </section>
-        </main>
+          </main>
+        </div>
       </div>
-    </div>
     </Fragment>
   );
 };
@@ -198,8 +263,8 @@ const mapStateToProps = (state) => ({
 //               </div>
 //             </div>
 //             </section>
-          
-            
+
+
 //             <section className="bg-light border-0 p-5 m-3">
 //             <div className="row">
 //               <div className="col-12">
@@ -296,8 +361,8 @@ const mapStateToProps = (state) => ({
 //                 <Delete color='secondary'/>
 //               </div>
 //             </div>
-            
-           
+
+
 //             </section>
 //         </main>
 //       </div>
