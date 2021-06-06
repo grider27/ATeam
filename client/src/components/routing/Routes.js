@@ -7,7 +7,7 @@ import Dashboard from '../dashboard/Dashboard';
 import NotFound from '../layout/NotFound';
 import PrivateRoute from '../routing/PrivateRoute';
 
-import Rewards from '../pages/Rewards/Rewards';
+import Classroom from '../pages/Classroom/Classroom';
 import ManageStudents from '../pages/ManageStudents/ManageStudents';
 import TeacherDashboard from '../pages/TeacherDashboard/TeacherDashboard';
 import Menu from '../pages/Menu/Menu';
@@ -21,7 +21,7 @@ const Routes = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
-        <PrivateRoute exact path="/rewards" component={Rewards} />
+        <PrivateRoute exact path="/classroom" component={Classroom} />
         <PrivateRoute exact path="/managestudents" component={ManageStudents} />
         <PrivateRoute exact path="/certificate" component={Certificate} />
         <PrivateRoute
