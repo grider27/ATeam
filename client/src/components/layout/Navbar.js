@@ -10,7 +10,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to="/menu">
-          <i className="fas fa-folder-minus" />
+          <i className="fas fa-folder-minus" />{' '}
           <span className="hide-sm">Menu</span>
         </Link>
       </li>
@@ -22,8 +22,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
       <li>
         <Link to="/classroom">
-          <i className="fas fa-chalkboard-teacher" />
-          {''}
+          <i className="fas fa-chalkboard-teacher" />{' '}
           <span className="hide-sm">Classroom</span>
         </Link>
       </li>
