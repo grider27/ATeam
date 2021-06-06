@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import { Link } from 'react-router-dom';
 import API from '../../../utils/API';
-import { List, ListItem } from '../../../components/List';
+import { List, ListItem } from '../../List';
 
 function valuetext(value) {
   return `${value} Reading Goal`;
