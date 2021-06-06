@@ -9,10 +9,6 @@ import { connect } from 'react-redux';
 import Spinner from '../../layout/Spinner';
 import { getCurrentProfile } from '../../../actions/profile';
 
-
-
-
-
 const Menu = ({
   getCurrentProfile,
   auth: { user },
@@ -26,155 +22,93 @@ const Menu = ({
     <Spinner />
   ) : (
     <Fragment>
-    <div className="wrapper">
-      <div className="content">
-      <h1 className="large text-primary">
-        Welcome to your Reader Feeder DashBoard!
-      </h1>
-      
-        <main className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-6">
-              <div className="card">
-              <Link to="/rewards"> 
-                <a className="img-card" href="/teacherdashboard">
-                  <img
-                    src={'./img/School_Monochromatic.png'}
-                    alt="kids walking to school"
-                  />
-                  </a>
+      <div className="wrapper">
+        <div className="content">
+          <h1 className="large text-primary">
+            Welcome to your Reader Feeder DashBoard!
+          </h1>
+          <main className="container">
+            <div className="row">
+              <div className="col-xs-12 col-sm-6">
+                <div className="card">
+                  <Link to="/classroom">
+                    <a className="img-card">
+                      <img
+                        src={'./img/School_Monochromatic.png'}
+                        alt="kids walking to school"
+                      />
+                    </a>
                   </Link>
-                <div className="card-content">
-                  
-                  <h4 className="card-title">
-                  <Link to="/rewards"> <a href="#">{user && user.lastName}'s Classroom </a> </Link>
-                  </h4>
-                  <p className="">
-                    Track the progress of your students reading goals.
-                  </p>
+                  <div className="card-content">
+                    <h4 className="card-title">
+                      <Link to="/classroom">
+                        {user && user.firstName} {user && user.lastName}'s
+                        Classroom{' '}
+                      </Link>
+                    </h4>
+                    <p className="">
+                      Track the progress of your students reading goals.
+                    </p>
+                  </div>
+                  <Link to="/classroom">
+                    {' '}
+                    <div
+                      className="card-read-more"
+                      style={{ backgroundColor: 'lightskyblue' }}
+                    >
+                      <a href="/classroom" className="btn btn-link btn-block">
+                        <span className="material-icons">forward </span>
+                      </a>
+                    </div>
+                  </Link>
                 </div>
-                <Link to="/rewards"> <div
-                  className="card-read-more"
-                  style={{ backgroundColor: 'lightskyblue' }} >
-                  
-                  <a
-                    href="/teacherdashboard"
-                    className="btn btn-link btn-block"
-                  >
-                    <span className="material-icons">forward </span>
-                  </a>
-                </div></Link>
+              </div>
+              <div className="col-xs-12 col-sm-6">
+                <div className="card">
+                  <Link to="/managestudents">
+                    <a className="img-card" href="/managestudents">
+                      <img
+                        src="./img/Teacher_Isometric.png"
+                        alt="teacher in front of class"
+                      />
+                    </a>
+                  </Link>
+                  <div className="card-content">
+                    <h4 className="card-title">
+                      <Link to="/managestudents">
+                        {' '}
+                        <a href="/managestudents">
+                          {user && user.schoolName}
+                        </a>{' '}
+                      </Link>
+                    </h4>
+                    <p className="">
+                      Manage your school, teachers, and rewards.
+                    </p>
+                  </div>
+                  <Link to="/managestudents">
+                    {' '}
+                    <div
+                      className="card-read-more"
+                      style={{ backgroundColor: 'navajowhite' }}
+                    >
+                      <a
+                        href="/managestudents"
+                        className="btn btn-link btn-block "
+                      >
+                        <span className="material-icons">forward </span>
+                      </a>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-6">
-              <div className="card">
-              <Link to="/managestudents"> 
-                <a className="img-card" href="/managestudents">
-                  <img
-                    src="./img/Teacher_Isometric.png"
-                    alt="teacher in front of class"
-                  />
-                  </a>
-                  </Link>
-                <div className="card-content">
-                  <h4 className="card-title">
-                  <Link to="/managestudents"> <a href="/managestudents">{user && user.schoolName}</a> </Link>
-                  </h4>
-                  <p className="">Manage your school, teachers, and rewards.</p>
-                </div>
-                <Link to="/managestudents"> <div
-                  className="card-read-more"
-                  style={{ backgroundColor: 'navajowhite' }}
-                >
-                  <a href="/managestudents" className="btn btn-link btn-block ">
-                    <span className="material-icons">forward </span>
-                  </a>
-                </div>
-                  </Link>
-              </div>
-            </div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
-    </div>
     </Fragment>
   );
 };
-
-
-//vkh end
-
-// const Menu = () => {
-//   return (
-//     <div className="wrapper">
-//       <div className="content">
-//         <main className="container">
-//           <div className="row">
-//             <div className="col-xs-12 col-sm-6">
-//               <div className="card">
-//               <Link to="/rewards"> 
-//                 <a className="img-card" href="/teacherdashboard">
-//                   <img
-//                     src={'./img/School_Monochromatic.png'}
-//                     alt="kids walking to school"
-//                   />
-//                   </a>
-//                   </Link>
-//                 <div className="card-content">
-                  
-//                   <h4 className="card-title">
-//                   <Link to="/rewards"> <a href="#">USER LAST NAME Classroom </a> </Link>
-//                   </h4>
-//                   <p className="">
-//                     Track the progress of your students reading goals.
-//                   </p>
-//                 </div>
-//                 <Link to="/rewards"> <div
-//                   className="card-read-more"
-//                   style={{ backgroundColor: 'lightskyblue' }} >
-                  
-//                   <a
-//                     href="/teacherdashboard"
-//                     className="btn btn-link btn-block"
-//                   >
-//                     <span className="material-icons">forward </span>
-//                   </a>
-//                 </div></Link>
-//               </div>
-//             </div>
-//             <div className="col-xs-12 col-sm-6">
-//               <div className="card">
-//               <Link to="/managestudents"> 
-//                 <a className="img-card" href="/managestudents">
-//                   <img
-//                     src="./img/Teacher_Isometric.png"
-//                     alt="teacher in front of class"
-//                   />
-//                   </a>
-//                   </Link>
-//                 <div className="card-content">
-//                   <h4 className="card-title">
-//                   <Link to="/managestudents"> <a href="/managestudents">SCHOOL NAME </a> </Link>
-//                   </h4>
-//                   <p className="">Manage your school, teachers, and rewards.</p>
-//                 </div>
-//                 <Link to="/managestudents"> <div
-//                   className="card-read-more"
-//                   style={{ backgroundColor: 'navajowhite' }}
-//                 >
-//                   <a href="/managestudents" className="btn btn-link btn-block ">
-//                     <span className="material-icons">forward </span>
-//                   </a>
-//                 </div>
-//                   </Link>
-//               </div>
-//             </div>
-//           </div>
-//         </main>
-//       </div>
-//     </div>
-//   );
-// };
 
 Menu.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,

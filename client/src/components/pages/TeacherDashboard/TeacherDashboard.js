@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Rewards from '../../Rewards';
-import Classroom from '../../Classroom';
+import Classroomtable from '../../Classroomtable';
 import Stars from '../../Stars';
 
 export default function Dashboard() {
@@ -29,7 +29,7 @@ export default function Dashboard() {
             {/* Classroom List */}
             <Grid item xs={12}>
               <Paper>
-                <Classroom />
+                <Classroomtable />
               </Paper>
             </Grid>
           </Grid>

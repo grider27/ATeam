@@ -3,42 +3,29 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
-import Logo from '../../img/books.png';
+// import Logo from '../../img/books.png';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
         <Link to="/menu">
-          <i className="fas fa-user" />
+          <i className="fas fa-folder-minus" />{' '}
           <span className="hide-sm">Menu</span>
         </Link>
       </li>
       <li>
-        <Link to="/teacherdashboard">
-          <i className="fas fa-user" />{' '}
-          <span className="hide-sm">Teacher Dashboard</span>
-        </Link>
-      </li>
-      <li>
         <Link to="/managestudents">
-          <i className="fas fa-user" />{' '}
+          <i className="fas fa-users" />{' '}
           <span className="hide-sm">Manage Students</span>
         </Link>
       </li>
       <li>
-        <Link to="/rewards">
-          <i className="fas fa-user" />
-          {''}
-          <span className="hide-sm">Rewards</span>
+        <Link to="/classroom">
+          <i className="fas fa-chalkboard-teacher" />{' '}
+          <span className="hide-sm">Classroom</span>
         </Link>
       </li>
-      {/* <li>
-        <Link to="/dashboard">
-          <i className="fas fa-user" />{' '}
-          <span className="hide-sm">Dashboard</span>
-        </Link>
-      </li> */}
       <li>
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt" />{' '}
@@ -60,10 +47,11 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   return (
-    <nav className="navbar bg-dark"> 
-      <h1><img src={Logo} class="logo1" alt="books icon" />
+    <nav className="navbar bg-dark">
+      <h1>
+        {/* <img src={Logo} class="logo1" alt="books icon" /> */}
         <Link to="/">
-          <i className="fas fa-code" /> Reader Feeder
+          <i className="fas fa-book-reader" /> Reader Feeder
         </Link>
       </h1>
       {!loading && (
