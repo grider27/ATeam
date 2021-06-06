@@ -1,6 +1,4 @@
-
 import Edit from '@material-ui/icons/Edit';
-import Delete from '@material-ui/icons/DeleteForever';
 
 //vkh
 import React, { useState, Fragment, useEffect } from 'react';
@@ -8,10 +6,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../../layout/Spinner';
 import { getCurrentProfile } from '../../../actions/profile';
-import API from "../../../utils/API";
-import { List, ListItem } from "../../../components/List";
-import DeleteBtn from "../../../components/DeleteBtn";
-import { Link } from "react-router-dom";
+import API from '../../../utils/API';
+import { List, ListItem } from '../../../components/List';
+import DeleteBtn from '../../../components/DeleteBtn';
+import { Link } from 'react-router-dom';
 
 const ManageStudents = ({
   getCurrentProfile,
@@ -23,44 +21,42 @@ const ManageStudents = ({
     loadStudents();
   }, [getCurrentProfile]);
 
-  const [formObject, setFormObject] = useState({})
-  const [students, setStudents] = useState([])
+  const [formObject, setFormObject] = useState({});
+  const [students, setStudents] = useState([]);
 
   function loadStudents() {
     API.getStudents()
-      .then(res =>
+      .then((res) =>
         //console.log(res.data)
         setStudents(res.data)
-
       )
-      .catch(err => console.log(err));
-  };
+      .catch((err) => console.log(err));
+  }
 
   function deleteStudent(id) {
     API.deleteStudent(id)
-      .then(res => loadStudents())
-      .catch(err => console.log(err));
+      .then((res) => loadStudents())
+      .catch((err) => console.log(err));
   }
-
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
+    setFormObject({ ...formObject, [name]: value });
+  }
 
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.name && formObject.email) {
       API.saveStudents({
         name: formObject.name,
-        stars: "0",
+        stars: '0',
         email: formObject.email,
-        teacherId: user.email
+        teacherId: user.email,
       })
-      .then(res => loadStudents())
-        .catch(err => console.log(err));
+        .then((res) => loadStudents())
+        .catch((err) => console.log(err));
     }
-  };
+  }
 
   return loading && profile === null ? (
     <Spinner />
@@ -72,26 +68,25 @@ const ManageStudents = ({
             <section className="bg-light border-0 p-5 m-3">
               <div className="row">
                 <div className="col-12">
-                  <h1 className="font-weight-bold">{user && user.firstName} {user && user.lastName}'s HOMEROOM <Edit color="primary" /></h1>
+                  <h1 className="font-weight-bold">
+                    {user && user.firstName} {user && user.lastName}'s HOMEROOM{' '}
+                    <Edit color="primary" />
+                  </h1>
                 </div>
               </div>
               <div className="row">
-                <div className="col-12">
-                  {user && user.schoolName}
-                </div>
+                <div className="col-12">{user && user.schoolName}</div>
+              </div>
+              <div className="row">
+                <div className="col-12">{user && user.address}</div>
               </div>
               <div className="row">
                 <div className="col-12">
-                  {user && user.address}
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-12">
-                  {user && user.city}, {user && user.state} {user && user.zipcode}
+                  {user && user.city}, {user && user.state}{' '}
+                  {user && user.zipcode}
                 </div>
               </div>
             </section>
-
 
             <section className="bg-light border-0 p-5 m-3">
               <div className="row">
@@ -121,10 +116,13 @@ const ManageStudents = ({
                   />
                 </div>
                 <div className="col-4">
-                  <button type="button" className="btn-primary btn-sm"
-                    onClick={handleFormSubmit}>
+                  <button
+                    type="button"
+                    className="btn-primary btn-sm"
+                    onClick={handleFormSubmit}
+                  >
                     Add Student
-                </button>
+                  </button>
                 </div>
               </div>
             </section>
@@ -136,11 +134,12 @@ const ManageStudents = ({
               </div>
               {students.length ? (
                 <List>
-                  {students.map(student => (
+                  {students.map((student) => (
                     <ListItem key={student._id}>
-                      <Link to={"/students/" + student._id}>
+                      <Link to={'/students/' + student._id}>
                         <strong>
-                          Name: {student.name}  &emsp;&emsp; Email: {student.email}
+                          Name: {student.name} &emsp;&emsp; Email:{' '}
+                          {student.email}
                         </strong>
                       </Link>
                       <DeleteBtn onClick={() => deleteStudent(student._id)} />
@@ -150,68 +149,6 @@ const ManageStudents = ({
               ) : (
                 <h3>No Results to Display</h3>
               )}
-              {/* <div className="row">
-              <div className="col-5">
-              <h4>Bart Simpson</h4>
-              </div>
-              <div className="col-5">
-              <h4>homer@gmail.com</h4>
-              </div>
-              <div className=" col-2 d-flex justify-content-end">
-                <Edit color="primary"/>
-                <Delete color='secondary'/>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-5">
-              <h4>Nelson Muntz</h4>
-              </div>
-              <div className="col-5">
-              <h4>nelson@gmail.com</h4>
-              </div>
-              <div className=" col-2 d-flex justify-content-end">
-                <Edit color="primary"/>
-                <Delete color='secondary'/>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-5">
-              <h4>Lisa Simpson</h4>
-              </div>
-              <div className="col-5">
-              <h4>homer@gmail.com</h4>
-              </div>
-              <div className=" col-2 d-flex justify-content-end">
-                <Edit color="primary"/>
-                <Delete color='secondary'/>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-5">
-              <h4>Martin Prince</h4>
-              </div>
-              <div className="col-5">
-              <h4>Prince@gmail.com</h4>
-              </div>
-              <div className=" col-2 d-flex justify-content-end">
-                <Edit color="primary"/>
-                <Delete color='secondary'/>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-5">
-              <h4>Ralph Wiggum</h4>
-              </div>
-              <div className="col-5">
-              <h4>wigout@gmail.com</h4>
-              </div>
-              <div className=" col-2 d-flex justify-content-end">
-                <Edit color="primary"/>
-                <Delete color='secondary'/>
-              </div>
-            </div> */}
-
-
             </section>
           </main>
         </div>
@@ -219,7 +156,6 @@ const ManageStudents = ({
     </Fragment>
   );
 };
-
 
 ManageStudents.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
@@ -233,8 +169,6 @@ const mapStateToProps = (state) => ({
 });
 
 //end vkh
-
-
 
 // const ManageStudents = () => {
 //   return (
@@ -263,7 +197,6 @@ const mapStateToProps = (state) => ({
 //               </div>
 //             </div>
 //             </section>
-
 
 //             <section className="bg-light border-0 p-5 m-3">
 //             <div className="row">
@@ -361,7 +294,6 @@ const mapStateToProps = (state) => ({
 //                 <Delete color='secondary'/>
 //               </div>
 //             </div>
-
 
 //             </section>
 //         </main>
