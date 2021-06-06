@@ -27,18 +27,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
       </li>
       <li>
-        <Link to="/rewards">
+        <Link to="/classroom">
           <i className="fas fa-user" />
           {''}
-          <span className="hide-sm">Rewards</span>
+          <span className="hide-sm">Classroom</span>
         </Link>
       </li>
-      {/* <li>
-        <Link to="/dashboard">
-          <i className="fas fa-user" />{' '}
-          <span className="hide-sm">Dashboard</span>
-        </Link>
-      </li> */}
+
       <li>
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt" />{' '}
@@ -60,8 +55,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   return (
-    <nav className="navbar bg-dark"> 
-      <h1><img src={Logo} class="logo1" alt="books icon" />
+    <nav className="navbar bg-dark">
+      <h1>
+        <img src={Logo} class="logo1" alt="books icon" />
         <Link to="/">
           <i className="fas fa-code" /> Reader Feeder
         </Link>
