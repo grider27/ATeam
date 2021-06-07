@@ -10,10 +10,10 @@ const Certificate = () => {
       <div className="content">
         <div className="row mb-5">
           <div className="col-sm-6 col-lg-6 d-flex justify-content-center">
-            <button onClick={() => window.print()}>Print</button>
+            <button class="btn btn-primary" onClick={() => window.print()}>Print</button>
           </div>
           <div className="col-sm-6 col-lg-6 d-flex justify-content-center">
-            <button>
+            <button class="btn btn-primary"> 
               <ButtonMailto
                 label="Email"
                 mailto="mailto:no-reply@example.com"
