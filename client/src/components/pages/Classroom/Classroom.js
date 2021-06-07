@@ -58,12 +58,25 @@ const Rewards = () => {
       .then((res) =>
         //console.log(res.data)
         setStudents(res.data)
+        
       )
       .catch((err) => console.log(err));
+    
   }
+  // function updateStar(event, value) {
+  //   event.preventDefault();
+  //   API.updateStudent(student._id, {
+  //     stars: value
+  //   }) 
+  //     .then((res) => loadStudents())
+  //     .catch((err) => console.log(err));
+  // }
+  
 
   return (
+ 
     <div className="wrapper">
+      
       <div className="content">
         <div className="container">
           <div className="row">
@@ -80,9 +93,17 @@ const Rewards = () => {
                     <strong>{student.name} &emsp;</strong>
                   </Link>
                   <BookSlider
-                    defaultValue={5}
+                    
+                    defaultValue={student.stars}
                     getAriaValueText={valuetext}
-                    onChange={(e, value) => {}}
+                    onChange={(event, newValue) => {
+                      event.preventDefault();
+                      API.updateStudent(student._id, {
+                        stars: newValue
+                      }) 
+                        .then((res) => loadStudents())
+                        .catch((err) => console.log(err));
+                    }}
                     aria-labelledby="discrete-slider"
                     valueLabelDisplay="auto"
                     step={1}
@@ -90,10 +111,13 @@ const Rewards = () => {
                     min={0}
                     max={10}
                   />
-                  <Link to="/certificate">
-                    {' '}
-                    <button>Reward</button>
-                  </Link>
+                {student.stars === 10 ? (
+                      <Link to="/certificate">
+                        <button>Reward</button>
+                      </Link>
+                    ) : (
+                      <p>No Reward Achieved</p>
+                  )}
                 </ListItem>
               ))}
             </List>
