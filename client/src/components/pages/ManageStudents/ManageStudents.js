@@ -10,6 +10,13 @@ import API from '../../../utils/API';
 import { List, ListItem } from '../../../components/List';
 import DeleteBtn from '../../../components/DeleteBtn';
 import { Link } from 'react-router-dom';
+import {
+  Table,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+} from '@material-ui/core';
 
 const ManageStudents = ({
   getCurrentProfile,
@@ -133,19 +140,36 @@ const ManageStudents = ({
                 </div>
               </div>
               {students.length ? (
-                <List>
-                  {students.map((student) => (
-                    <ListItem key={student._id}>
-                      <Link to={'/students/' + student._id}>
-                        <strong>
-                          Name: {student.name} &emsp;&emsp; Email:{' '}
-                          {student.email}
-                        </strong>
-                      </Link>
-                      <DeleteBtn onClick={() => deleteStudent(student._id)} />
-                    </ListItem>
-                  ))}
-                </List>
+                // <List>
+                //   {students.map((student) => (
+                //     <ListItem key={student._id}>
+                //       <Link to={'/students/' + student._id}>
+                //         <strong>
+                //           Name: {student.name} &emsp; Email: {student.email}
+                //         </strong>
+                //       </Link>
+                //       <DeleteBtn onClick={() => deleteStudent(student._id)} />
+                //     </ListItem>
+                //   ))}
+                // </List>
+                <Table size="small">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Student Name</TableCell>
+                      <TableCell>Email</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {students.map((student) => (
+                      <TableRow key={student._id}>
+                        <TableCell>Name: {student.name}</TableCell>
+                        <TableCell>Email: {student.email}</TableCell>
+                        <TableCell>Books Completed: {student.stars}</TableCell>
+                        <DeleteBtn onClick={() => deleteStudent(student._id)} />
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
               ) : (
                 <h3>No Results to Display</h3>
               )}
