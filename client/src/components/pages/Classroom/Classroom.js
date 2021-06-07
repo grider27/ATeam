@@ -113,7 +113,8 @@ const Rewards = () => {
                   />
                 {student.stars === 10 ? (
                       <Link to="/certificate">
-                        <button>Reward</button>
+                      <button class="btn btn-success
+                        ">Reward</button>
                       </Link>
                     ) : (
                       <p>No Reward Achieved</p>

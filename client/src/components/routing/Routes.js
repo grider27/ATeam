@@ -11,6 +11,8 @@ import Classroom from '../pages/Classroom/Classroom';
 import ManageStudents from '../pages/ManageStudents/ManageStudents';
 import Menu from '../pages/Menu/Menu';
 import Certificate from '../pages/Certificate/Certificate';
+import About from '../pages/About/About';
+
 
 const Routes = () => {
   return (
@@ -19,6 +21,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/about" component={About} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/classroom" component={Classroom} />
         <PrivateRoute exact path="/managestudents" component={ManageStudents} />
