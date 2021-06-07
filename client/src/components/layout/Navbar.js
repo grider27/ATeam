@@ -47,7 +47,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   return (
-    <nav className="navbar bg-dark">
+    <nav className="navbar ">
       <h1>
         {/* <img src={Logo} class="logo1" alt="books icon" /> */}
         <Link to="/">

@@ -1,6 +1,4 @@
 import Edit from '@material-ui/icons/Edit';
-
-//vkh
 import React, { useState, Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -31,10 +29,7 @@ const ManageStudents = ({
 
   function loadStudents() {
     API.getStudents()
-      .then((res) =>
-        //console.log(res.data)
-        setStudents(res.data)
-      )
+      .then((res) => setStudents(res.data))
       .catch((err) => console.log(err));
   }
 
@@ -133,16 +128,17 @@ const ManageStudents = ({
             <section className="bg-light border-0 p-5 m-3">
               <div className="row">
                 <div className="col-12">
-                  <h2 className="font-weight-bold">Classroom</h2>
+                  <h2 className="font-weight-bold">Student Information</h2>
                 </div>
               </div>
               {students.length ? (
                 <Table size="small">
                   <TableHead>
                     <TableRow>
-                      <TableCell>Student Name</TableCell>
+                      <TableCell>Name</TableCell>
                       <TableCell>Email</TableCell>
                       <TableCell>Books Completed</TableCell>
+                      <TableCell align="right">Remove</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -151,7 +147,11 @@ const ManageStudents = ({
                         <TableCell>{student.name}</TableCell>
                         <TableCell>{student.email}</TableCell>
                         <TableCell>{student.stars}</TableCell>
-                        <DeleteBtn onClick={() => deleteStudent(student._id)} />
+                        <TableCell>
+                          <DeleteBtn
+                            onClick={() => deleteStudent(student._id)}
+                          />
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
